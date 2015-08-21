@@ -14,7 +14,7 @@ static const NSInteger kDefaultHeaderW = kDefaultHeaderH;/**< 头像的宽度 */
 static const CGFloat kUserNameFontSize = 18.f;/**< 用户名字体大小 */
 static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
 
-@interface JHLeftViewController ()
+@interface JHLeftViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, assign) NSInteger selectIndex;
@@ -22,9 +22,21 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
 @property (nonatomic, weak) UIImageView *userIcon;
 @property (nonatomic, weak) UIButton *settingBtn;
 
+@property (nonatomic, strong) NSArray *leftItemArray;
+
 @end
 
 @implementation JHLeftViewController
+
+
+- (NSArray *)leftItemArray {
+    if (!_leftItemArray) {
+        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"LeftVcItems.plist" ofType:nil];
+        _leftItemArray = [NSArray arrayWithContentsOfFile:fullPath];
+    }
+    
+    return _leftItemArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,7 +82,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     // 手机号
     UILabel *phone = [[UILabel alloc] init];
     [allAnimationView addSubview:phone];
-    phone.text = @"123456789";
+    phone.text = @"piglikeyoung@qq.com";
     phone.font = [UIFont systemFontOfSize:kUserPhoneFontSize];
     phone.textColor = [UIColor lightGrayColor];
     size = [phone.text sizeWithFont:[UIFont systemFontOfSize:kUserPhoneFontSize] maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
@@ -124,7 +136,9 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     UITableView *tableView = [[UITableView alloc] init];
     tableView.backgroundColor = [UIColor clearColor];
     tableView.tableFooterView = [[UIView alloc] init];
-    tableView.backgroundColor = JHRandomColor;
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;
     [allAnimationView addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -133,6 +147,8 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
         make.left.equalTo(allAnimationView.mas_left);
         make.right.equalTo(allAnimationView.mas_right);
     }];
+    
+    
 }
 
 - (void)setTableViewShowWidth:(CGFloat)tableViewShowWidth {
@@ -145,13 +161,43 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     }];
 }
 
-- (void)selectNowindex {
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:_selectIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
-}
-
 - (void)dealloc {
     JHLog(@"JHLeftViewController --- dealloc");
 }
+
+#pragma mark - UITableViewDataSource, UITableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.leftItemArray.count;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
+    }
+    
+    cell.textLabel.text = self.leftItemArray[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.delegate respondsToSelector:@selector(selectMenuWithIndex:item:)]) {
+        [self.delegate selectMenuWithIndex:indexPath item:self.leftItemArray[indexPath.row]];
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+
 
 
 @end

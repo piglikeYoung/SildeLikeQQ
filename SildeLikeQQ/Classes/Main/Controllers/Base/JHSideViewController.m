@@ -13,11 +13,11 @@
 #import "JHBaseViewController.h"
 #import "JHNavigationController.h"
 
-@interface JHSideViewController ()<UIGestureRecognizerDelegate>
+@interface JHSideViewController ()<UIGestureRecognizerDelegate, JHLeftViewMenuSelectDelegate, JHBaseItemSelectDelegate>
 
 
 
-@property (nonatomic, weak) UIViewController *rootViewController;
+@property (nonatomic, weak) UIViewController *tableSelectViewController;
 @property (nonatomic, weak) JHBaseViewController *baseViewController;
 @property (nonatomic, weak) JHLeftViewController *leftViewController;
 @property (nonatomic, weak) JHRightViewController *rightViewController;
@@ -100,13 +100,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.needSwipeShowMenu = YES;//默认开启的可滑动展示
-    //动画效果可以被自己自定义，具体请看api
-    
     // 创建左视图
     JHLeftViewController *leftViewController = [[JHLeftViewController alloc] init];
     leftViewController.view.frame = self.view.bounds;
     leftViewController.tableViewShowWidth = self.leftViewShowWidth;
+    leftViewController.delegate = self;
     [self addChildViewController:leftViewController];
     self.leftViewController = leftViewController;
     
@@ -118,33 +116,59 @@
 
     // 创建主视图
     JHBaseViewController *baseViewController = [[JHBaseViewController alloc] init];
-    JHNavigationController *rootViewController = [[JHNavigationController alloc] initWithRootViewController:baseViewController];
-    rootViewController.view.frame = self.view.frame;
-    [self.view addSubview:rootViewController.view];
-    [self addChildViewController:rootViewController];
-    self.rootViewController = rootViewController;
+    [self.view addSubview:baseViewController.view];
+    [self addChildViewController:baseViewController];
+    self.baseViewController = baseViewController;
+    // 拿到当前选中的tabItem
+    self.tableSelectViewController = self.baseViewController.lastSelectedViewContoller;
+    // 添加手势
+    [self.tableSelectViewController.view addGestureRecognizer:self.panGestureRecognizer];
+    // 设置代理，选择别的tabItem触发
+    baseViewController.mDelegate = self;
+    self.currentView = self.baseViewController.view;
     
-    self.currentView = self.rootViewController.view;
+    //动画效果可以被自己自定义，具体请看api
 }
 
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (!self.rootViewController) {
+    if (!self.baseViewController) {
         NSAssert(false, @"you must set rootViewController!!");
     }
 }
 
-#pragma mark - Public method
-- (void)setNeedSwipeShowMenu:(BOOL)needSwipeShowMenu{
-    _needSwipeShowMenu = needSwipeShowMenu;
-    if (needSwipeShowMenu) {
-        [self.view addGestureRecognizer:self.panGestureRecognizer];
-    }else{
-        [self.view removeGestureRecognizer:self.panGestureRecognizer];
+#pragma mark - JHLeftViewMenuSelectDelegate
+/**
+ *  左视图菜单选择
+ *
+ */
+- (void)selectMenuWithIndex:(NSIndexPath *)index item:(id)obj {
+    // 主视图恢复
+    [self hideSideViewController];
+    // 创建新的控制器push到导航控制器
+    UIViewController *vc =  [[UIViewController alloc] init];
+    vc.title = obj;
+    vc.view.backgroundColor = JHRandomColor;
+    [self.tableSelectViewController.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - JHBaseItemSelectDelegate
+/**
+ *  tabBar选择
+ *
+ */
+- (void)selectWithItem:(UIViewController *)vc {
+    
+    // 当选择不一样的Item时，移除旧的控制器上得手势，添加到新的控制器上
+    if (vc != self.tableSelectViewController) {
+        [self.tableSelectViewController.view removeGestureRecognizer:self.panGestureRecognizer];
+        self.tableSelectViewController = vc;
+        [self.tableSelectViewController.view addGestureRecognizer:self.panGestureRecognizer];
     }
 }
 
+#pragma mark - Public method
 - (void)showShadow:(BOOL)show{
     _currentView.layer.shadowOpacity    = show ? 0.8f : 0.0f;
     if (show) {

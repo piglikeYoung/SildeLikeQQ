@@ -22,6 +22,7 @@
 		7DE4996A1B86E3EE00BFAB24 /* JHRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */; };
 		7DE4996B1B86E3EE00BFAB24 /* JHSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */; };
 		7DE4996E1B86E50B00BFAB24 /* LeftVcItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DE4996D1B86E50B00BFAB24 /* LeftVcItems.plist */; };
+		7DE499721B87024800BFAB24 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499711B87024800BFAB24 /* UIBarButtonItem+Extension.m */; };
 		955796BB351C6ECED5ADF524 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994F8E47B48AFED205B09F67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		7DE499651B86E3EE00BFAB24 /* JHSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSideViewController.h; sourceTree = "<group>"; };
 		7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSideViewController.m; sourceTree = "<group>"; };
 		7DE4996D1B86E50B00BFAB24 /* LeftVcItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LeftVcItems.plist; sourceTree = "<group>"; };
+		7DE499701B87024800BFAB24 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		7DE499711B87024800BFAB24 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		994F8E47B48AFED205B09F67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB33054FBF77C5D247F4C58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FE4FCCD539DCD03D9B43D9CF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 		7DE4993E1B86CABB00BFAB24 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				7DE499701B87024800BFAB24 /* UIBarButtonItem+Extension.h */,
+				7DE499711B87024800BFAB24 /* UIBarButtonItem+Extension.m */,
 				7DE4993F1B86CACF00BFAB24 /* UIView+Extension.h */,
 				7DE499401B86CACF00BFAB24 /* UIView+Extension.m */,
 				7DE499591B86E1CF00BFAB24 /* NSString+Extension.h */,
@@ -399,6 +404,7 @@
 				7DE4995B1B86E1CF00BFAB24 /* NSString+Extension.m in Sources */,
 				7DE4993B1B86C92800BFAB24 /* AppDelegate.m in Sources */,
 				7DE499131B86C85500BFAB24 /* main.m in Sources */,
+				7DE499721B87024800BFAB24 /* UIBarButtonItem+Extension.m in Sources */,
 				7DE499671B86E3EE00BFAB24 /* JHBaseViewController.m in Sources */,
 				7DE4996A1B86E3EE00BFAB24 /* JHRightViewController.m in Sources */,
 				7DE499681B86E3EE00BFAB24 /* JHLeftViewController.m in Sources */,

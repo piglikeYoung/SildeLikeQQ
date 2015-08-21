@@ -10,7 +10,7 @@
 
 @protocol JHLeftViewMenuSelectDelegate <NSObject>
 
-- (void)selectMenuWithIndex:(NSIndexPath*)index withSelect:(BOOL)isSelect isMessageBtn:(BOOL)isMessageBtn;
+- (void)selectMenuWithIndex:(NSIndexPath*)index item:(id)obj;
 
 @end
 

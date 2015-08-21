@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol JHBaseItemSelectDelegate <NSObject>
+
+- (void)selectWithItem:(UIViewController *)vc;
+
+@end
+
 @interface JHBaseViewController : UITabBarController
+
+@property (nonatomic, weak) UIViewController *lastSelectedViewContoller;
+
+@property (nonatomic, weak) id<JHBaseItemSelectDelegate> mDelegate;
 
 @end
