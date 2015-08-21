@@ -1,0 +1,25 @@
+//
+//  JHPrefixHeader.pch
+//  SildeLikeQQ
+//
+//  Created by piglikeyoung on 15/8/21.
+//  Copyright (c) 2015年 piglikeyoung. All rights reserved.
+//
+
+#ifndef SildeLikeQQ_JHPrefixHeader_pch
+#define SildeLikeQQ_JHPrefixHeader_pch
+
+#import "UIView+Extension.h"
+
+// 随机色
+#define JHRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+
+// 颜色
+#define JHColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 屏幕尺寸
+#define JHScreenW [UIScreen mainScreen].bounds.size.width
+#define JHScreenH [UIScreen mainScreen].bounds.size.height
+#define JHScreenBounds [UIScreen mainScreen].bounds
+
+#endif

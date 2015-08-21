@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7DE499131B86C85500BFAB24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499121B86C85500BFAB24 /* main.m */; };
-		7DE499161B86C85500BFAB24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499151B86C85500BFAB24 /* AppDelegate.m */; };
-		7DE499191B86C85500BFAB24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499181B86C85500BFAB24 /* ViewController.m */; };
 		7DE4991C1B86C85500BFAB24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE4991A1B86C85500BFAB24 /* Main.storyboard */; };
 		7DE4991E1B86C85500BFAB24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE4991D1B86C85500BFAB24 /* Images.xcassets */; };
 		7DE499211B86C85500BFAB24 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DE4991F1B86C85500BFAB24 /* LaunchScreen.xib */; };
 		7DE4992D1B86C85500BFAB24 /* SildeLikeQQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4992C1B86C85500BFAB24 /* SildeLikeQQTests.m */; };
+		7DE4993B1B86C92800BFAB24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4993A1B86C92800BFAB24 /* AppDelegate.m */; };
+		7DE499411B86CACF00BFAB24 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499401B86CACF00BFAB24 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +30,17 @@
 		7DE4990D1B86C85500BFAB24 /* SildeLikeQQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SildeLikeQQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE499111B86C85500BFAB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DE499121B86C85500BFAB24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7DE499141B86C85500BFAB24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7DE499151B86C85500BFAB24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7DE499171B86C85500BFAB24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7DE499181B86C85500BFAB24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7DE4991B1B86C85500BFAB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DE4991D1B86C85500BFAB24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7DE499201B86C85500BFAB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7DE499261B86C85500BFAB24 /* SildeLikeQQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SildeLikeQQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE4992B1B86C85500BFAB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DE4992C1B86C85500BFAB24 /* SildeLikeQQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SildeLikeQQTests.m; sourceTree = "<group>"; };
+		7DE499391B86C92800BFAB24 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7DE4993A1B86C92800BFAB24 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7DE4993D1B86CA0700BFAB24 /* JHPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHPrefixHeader.pch; sourceTree = "<group>"; };
+		7DE4993F1B86CACF00BFAB24 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		7DE499401B86CACF00BFAB24 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +82,7 @@
 		7DE4990F1B86C85500BFAB24 /* SildeLikeQQ */ = {
 			isa = PBXGroup;
 			children = (
-				7DE499141B86C85500BFAB24 /* AppDelegate.h */,
-				7DE499151B86C85500BFAB24 /* AppDelegate.m */,
-				7DE499171B86C85500BFAB24 /* ViewController.h */,
-				7DE499181B86C85500BFAB24 /* ViewController.m */,
+				7DE499371B86C8ED00BFAB24 /* Classes */,
 				7DE4991A1B86C85500BFAB24 /* Main.storyboard */,
 				7DE4991D1B86C85500BFAB24 /* Images.xcassets */,
 				7DE4991F1B86C85500BFAB24 /* LaunchScreen.xib */,
@@ -98,6 +96,7 @@
 			children = (
 				7DE499111B86C85500BFAB24 /* Info.plist */,
 				7DE499121B86C85500BFAB24 /* main.m */,
+				7DE4993D1B86CA0700BFAB24 /* JHPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +116,49 @@
 				7DE4992B1B86C85500BFAB24 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DE499371B86C8ED00BFAB24 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7DE4993C1B86C93300BFAB24 /* Main */,
+				7DE499381B86C92800BFAB24 /* AppDelegate */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7DE499381B86C92800BFAB24 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7DE499391B86C92800BFAB24 /* AppDelegate.h */,
+				7DE4993A1B86C92800BFAB24 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7DE4993C1B86C93300BFAB24 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7DE499421B86CAD400BFAB24 /* Controllers */,
+				7DE4993E1B86CABB00BFAB24 /* Category */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7DE4993E1B86CABB00BFAB24 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7DE4993F1B86CACF00BFAB24 /* UIView+Extension.h */,
+				7DE499401B86CACF00BFAB24 /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7DE499421B86CAD400BFAB24 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +205,7 @@
 		7DE499051B86C85500BFAB24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JH;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = piglikeyoung;
 				TargetAttributes = {
@@ -219,8 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DE499191B86C85500BFAB24 /* ViewController.m in Sources */,
-				7DE499161B86C85500BFAB24 /* AppDelegate.m in Sources */,
+				7DE499411B86CACF00BFAB24 /* UIView+Extension.m in Sources */,
+				7DE4993B1B86C92800BFAB24 /* AppDelegate.m in Sources */,
 				7DE499131B86C85500BFAB24 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +392,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SildeLikeQQ/JHPrefixHeader.pch";
 				INFOPLIST_FILE = SildeLikeQQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +405,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = SildeLikeQQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
