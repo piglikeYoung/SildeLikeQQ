@@ -14,6 +14,14 @@
 		7DE4992D1B86C85500BFAB24 /* SildeLikeQQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4992C1B86C85500BFAB24 /* SildeLikeQQTests.m */; };
 		7DE4993B1B86C92800BFAB24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4993A1B86C92800BFAB24 /* AppDelegate.m */; };
 		7DE499411B86CACF00BFAB24 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499401B86CACF00BFAB24 /* UIView+Extension.m */; };
+		7DE499581B86E18F00BFAB24 /* AppMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499571B86E18F00BFAB24 /* AppMacro.m */; };
+		7DE4995B1B86E1CF00BFAB24 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4995A1B86E1CF00BFAB24 /* NSString+Extension.m */; };
+		7DE499671B86E3EE00BFAB24 /* JHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4995E1B86E3EE00BFAB24 /* JHBaseViewController.m */; };
+		7DE499681B86E3EE00BFAB24 /* JHLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499601B86E3EE00BFAB24 /* JHLeftViewController.m */; };
+		7DE499691B86E3EE00BFAB24 /* JHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499621B86E3EE00BFAB24 /* JHNavigationController.m */; };
+		7DE4996A1B86E3EE00BFAB24 /* JHRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */; };
+		7DE4996B1B86E3EE00BFAB24 /* JHSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */; };
+		955796BB351C6ECED5ADF524 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994F8E47B48AFED205B09F67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +49,23 @@
 		7DE4993D1B86CA0700BFAB24 /* JHPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHPrefixHeader.pch; sourceTree = "<group>"; };
 		7DE4993F1B86CACF00BFAB24 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		7DE499401B86CACF00BFAB24 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		7DE499561B86E18F00BFAB24 /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		7DE499571B86E18F00BFAB24 /* AppMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMacro.m; sourceTree = "<group>"; };
+		7DE499591B86E1CF00BFAB24 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		7DE4995A1B86E1CF00BFAB24 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		7DE4995D1B86E3EE00BFAB24 /* JHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseViewController.h; sourceTree = "<group>"; };
+		7DE4995E1B86E3EE00BFAB24 /* JHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseViewController.m; sourceTree = "<group>"; };
+		7DE4995F1B86E3EE00BFAB24 /* JHLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLeftViewController.h; sourceTree = "<group>"; };
+		7DE499601B86E3EE00BFAB24 /* JHLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLeftViewController.m; sourceTree = "<group>"; };
+		7DE499611B86E3EE00BFAB24 /* JHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHNavigationController.h; sourceTree = "<group>"; };
+		7DE499621B86E3EE00BFAB24 /* JHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHNavigationController.m; sourceTree = "<group>"; };
+		7DE499631B86E3EE00BFAB24 /* JHRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRightViewController.h; sourceTree = "<group>"; };
+		7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRightViewController.m; sourceTree = "<group>"; };
+		7DE499651B86E3EE00BFAB24 /* JHSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSideViewController.h; sourceTree = "<group>"; };
+		7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSideViewController.m; sourceTree = "<group>"; };
+		994F8E47B48AFED205B09F67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB33054FBF77C5D247F4C58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FE4FCCD539DCD03D9B43D9CF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955796BB351C6ECED5ADF524 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,12 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51E027208DA5F7DB6D9E68EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				994F8E47B48AFED205B09F67 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DE499041B86C85500BFAB24 = {
 			isa = PBXGroup;
 			children = (
 				7DE4990F1B86C85500BFAB24 /* SildeLikeQQ */,
 				7DE499291B86C85500BFAB24 /* SildeLikeQQTests */,
 				7DE4990E1B86C85500BFAB24 /* Products */,
+				AC1F13FB36301BD98E3D95F6 /* Pods */,
+				51E027208DA5F7DB6D9E68EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +157,7 @@
 		7DE499371B86C8ED00BFAB24 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7DE499521B86E05F00BFAB24 /* Macro */,
 				7DE4993C1B86C93300BFAB24 /* Main */,
 				7DE499381B86C92800BFAB24 /* AppDelegate */,
 			);
@@ -150,6 +187,8 @@
 			children = (
 				7DE4993F1B86CACF00BFAB24 /* UIView+Extension.h */,
 				7DE499401B86CACF00BFAB24 /* UIView+Extension.m */,
+				7DE499591B86E1CF00BFAB24 /* NSString+Extension.h */,
+				7DE4995A1B86E1CF00BFAB24 /* NSString+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -157,8 +196,44 @@
 		7DE499421B86CAD400BFAB24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7DE4995C1B86E3CA00BFAB24 /* Base */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7DE499521B86E05F00BFAB24 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				7DE499561B86E18F00BFAB24 /* AppMacro.h */,
+				7DE499571B86E18F00BFAB24 /* AppMacro.m */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		7DE4995C1B86E3CA00BFAB24 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7DE4995D1B86E3EE00BFAB24 /* JHBaseViewController.h */,
+				7DE4995E1B86E3EE00BFAB24 /* JHBaseViewController.m */,
+				7DE4995F1B86E3EE00BFAB24 /* JHLeftViewController.h */,
+				7DE499601B86E3EE00BFAB24 /* JHLeftViewController.m */,
+				7DE499611B86E3EE00BFAB24 /* JHNavigationController.h */,
+				7DE499621B86E3EE00BFAB24 /* JHNavigationController.m */,
+				7DE499631B86E3EE00BFAB24 /* JHRightViewController.h */,
+				7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */,
+				7DE499651B86E3EE00BFAB24 /* JHSideViewController.h */,
+				7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AC1F13FB36301BD98E3D95F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACB33054FBF77C5D247F4C58 /* Pods.debug.xcconfig */,
+				FE4FCCD539DCD03D9B43D9CF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DE499301B86C85500BFAB24 /* Build configuration list for PBXNativeTarget "SildeLikeQQ" */;
 			buildPhases = (
+				3DD03AA560A2F495C8DA5389 /* Check Pods Manifest.lock */,
 				7DE499091B86C85500BFAB24 /* Sources */,
 				7DE4990A1B86C85500BFAB24 /* Frameworks */,
 				7DE4990B1B86C85500BFAB24 /* Resources */,
+				3DEEC600F6FF34045662CA6F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,14 +334,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DD03AA560A2F495C8DA5389 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3DEEC600F6FF34045662CA6F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7DE499091B86C85500BFAB24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7DE499411B86CACF00BFAB24 /* UIView+Extension.m in Sources */,
+				7DE499691B86E3EE00BFAB24 /* JHNavigationController.m in Sources */,
+				7DE499581B86E18F00BFAB24 /* AppMacro.m in Sources */,
+				7DE4995B1B86E1CF00BFAB24 /* NSString+Extension.m in Sources */,
 				7DE4993B1B86C92800BFAB24 /* AppDelegate.m in Sources */,
 				7DE499131B86C85500BFAB24 /* main.m in Sources */,
+				7DE499671B86E3EE00BFAB24 /* JHBaseViewController.m in Sources */,
+				7DE4996A1B86E3EE00BFAB24 /* JHRightViewController.m in Sources */,
+				7DE499681B86E3EE00BFAB24 /* JHLeftViewController.m in Sources */,
+				7DE4996B1B86E3EE00BFAB24 /* JHSideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +507,7 @@
 		};
 		7DE499311B86C85500BFAB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACB33054FBF77C5D247F4C58 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -403,6 +521,7 @@
 		};
 		7DE499321B86C85500BFAB24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4FCCD539DCD03D9B43D9CF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -466,6 +585,7 @@
 				7DE499321B86C85500BFAB24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DE499331B86C85500BFAB24 /* Build configuration list for PBXNativeTarget "SildeLikeQQTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +594,7 @@
 				7DE499351B86C85500BFAB24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
