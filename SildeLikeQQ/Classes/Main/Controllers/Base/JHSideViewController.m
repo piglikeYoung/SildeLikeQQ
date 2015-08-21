@@ -28,9 +28,9 @@
 
 @property (nonatomic, assign) CGPoint startPanPoint;
 @property (nonatomic, assign) CGPoint lastPanPoint;
-@property (nonatomic, assign) BOOL panMovingRightOrLeft;//true是向右，false是向左
+@property (nonatomic, assign) BOOL panMovingRightOrLeft;/**< true是向右，false是向左 */
 
-@property (nonatomic, strong) UIButton *coverButton;
+@property (nonatomic, strong) UIButton *coverButton;/**< 遮盖 */
 
 @property (nonatomic, assign) CGRect touchRect;/**< 左边可以响应拖动的大小 */
 @property (nonatomic, assign) CGRect rightTouchRect;/**< 右边可以响应拖动的大小 */
@@ -127,7 +127,7 @@
     baseViewController.mDelegate = self;
     self.currentView = self.baseViewController.view;
     
-    //动画效果可以被自己自定义，具体请看api
+    // 动画效果可以被自己自定义，具体请看api
 }
 
 

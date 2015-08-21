@@ -25,6 +25,8 @@
     self.delegate = self;
     
     self.view.backgroundColor = JHRandomColor;
+    
+    // 添加子控制器
     [self addAllChildVcs];
 }
 

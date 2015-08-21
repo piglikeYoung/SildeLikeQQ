@@ -16,6 +16,9 @@
 
 @interface JHBaseViewController : UITabBarController
 
+/**
+ *  最后选中的tabItem
+ */
 @property (nonatomic, weak) UIViewController *lastSelectedViewContoller;
 
 @property (nonatomic, weak) id<JHBaseItemSelectDelegate> mDelegate;

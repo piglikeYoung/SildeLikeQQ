@@ -133,14 +133,13 @@
     [super pushViewController:viewController animated:animated];
 }
 
-- (void)back
-{
-#warning 这里用的是self, 因为self就是当前正在使用的导航控制器
+- (void)back{
+
     [self popViewControllerAnimated:YES];
 }
 
-- (void)more
-{
+- (void)more{
+    
     [self popToRootViewControllerAnimated:YES];
 }
 

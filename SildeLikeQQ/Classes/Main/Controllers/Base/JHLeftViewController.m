@@ -17,12 +17,11 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
 @interface JHLeftViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
-@property (nonatomic, assign) NSInteger selectIndex;
 
 @property (nonatomic, weak) UIImageView *userIcon;
 @property (nonatomic, weak) UIButton *settingBtn;
 
-@property (nonatomic, strong) NSArray *leftItemArray;
+@property (nonatomic, strong) NSArray *leftItemArray;/**< 从Plist读取的菜单名称 */
 
 @end
 
@@ -151,10 +150,14 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     
 }
 
+/**
+ *  设置tableView可现实的宽带
+ *
+ */
 - (void)setTableViewShowWidth:(CGFloat)tableViewShowWidth {
     _tableViewShowWidth = tableViewShowWidth;
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(tableViewShowWidth - padding);
+        make.width.mas_equalTo(_tableViewShowWidth);
         make.top.equalTo(self.userIcon.mas_bottom).offset(padding);
         make.bottom.equalTo(self.settingBtn.mas_top).offset(-padding);
         make.left.equalTo(self.allAnimationView.mas_left);

@@ -18,10 +18,15 @@
 
 @property (nonatomic,weak) id <JHLeftViewMenuSelectDelegate> delegate;
 
+/**
+ *  所有控件存放的View
+ */
 @property (nonatomic,weak) UIView *allAnimationView;
 
-@property (nonatomic, assign) CGFloat tableViewShowWidth;/**< tableView可以展示的宽度 */
+/**
+ *  tableView可以展示的宽度
+ */
+@property (nonatomic, assign) CGFloat tableViewShowWidth;
 
-- (void)selectNowindex;
 
 @end

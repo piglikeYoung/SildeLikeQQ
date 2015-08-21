@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     // 设置背景图片
-    UIImageView *viewBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"baseBgImg"]];
+    UIImageView *viewBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back"]];
     viewBg.frame = self.view.bounds;
     viewBg.clipsToBounds = YES;
     [self.view addSubview:viewBg];

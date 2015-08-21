@@ -222,12 +222,12 @@
 		7DE4995C1B86E3CA00BFAB24 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				7DE499611B86E3EE00BFAB24 /* JHNavigationController.h */,
+				7DE499621B86E3EE00BFAB24 /* JHNavigationController.m */,
 				7DE4995D1B86E3EE00BFAB24 /* JHBaseViewController.h */,
 				7DE4995E1B86E3EE00BFAB24 /* JHBaseViewController.m */,
 				7DE4995F1B86E3EE00BFAB24 /* JHLeftViewController.h */,
 				7DE499601B86E3EE00BFAB24 /* JHLeftViewController.m */,
-				7DE499611B86E3EE00BFAB24 /* JHNavigationController.h */,
-				7DE499621B86E3EE00BFAB24 /* JHNavigationController.m */,
 				7DE499631B86E3EE00BFAB24 /* JHRightViewController.h */,
 				7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */,
 				7DE499651B86E3EE00BFAB24 /* JHSideViewController.h */,
