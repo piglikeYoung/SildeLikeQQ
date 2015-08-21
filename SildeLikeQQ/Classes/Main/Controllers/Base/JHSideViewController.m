@@ -146,6 +146,12 @@
 - (void)selectMenuWithIndex:(NSIndexPath *)index item:(id)obj {
     // 主视图恢复
     [self hideSideViewController];
+    
+    // 移除currentView的手势
+    [self.currentView removeGestureRecognizer:self.panGestureRecognizer];
+    // 添加到当前显示的控制器上
+    [self.tableSelectViewController.view addGestureRecognizer:self.panGestureRecognizer];
+    
     // 创建新的控制器push到导航控制器
     UIViewController *vc =  [[UIViewController alloc] init];
     vc.title = obj;
@@ -234,6 +240,8 @@
     [UIView animateWithDuration:animatedTime animations:^{
         [self layoutCurrentViewWithOffset:_leftViewShowWidth];
         [_currentView addSubview:self.coverButton];
+        // 手势从tabItem的View回到currentView
+        [self.currentView addGestureRecognizer:self.panGestureRecognizer];
         [self showShadow:_showBoundsShadow];
     }];
 }
@@ -256,6 +264,8 @@
     [UIView animateWithDuration:animatedTime animations:^{
         [self layoutCurrentViewWithOffset:-_rightViewShowWidth];
         [_currentView addSubview:self.coverButton];
+        // 手势从tabItem的View回到currentView
+        [self.currentView addGestureRecognizer:self.panGestureRecognizer];
         [self showShadow:_showBoundsShadow];
     } completion:^(BOOL finished) {
     }];
@@ -286,7 +296,7 @@
     }];
 }
 - (void)hideSideViewController{
-    [self hideSideViewController:true];
+    [self hideSideViewController:YES];
 }
 
 
@@ -329,7 +339,8 @@
     
     // 开始拖动
     if (panGesture.state == UIGestureRecognizerStateBegan) {
-
+        // 开始拖动移除遮盖
+        [self.coverButton removeFromSuperview];
         _startPanPoint = self.currentView.frame.origin;
         
         if (_currentView.x == 0) {

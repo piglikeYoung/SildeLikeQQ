@@ -18,7 +18,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
 
 @property (nonatomic, weak) UITableView *tableView;
 
-@property (nonatomic, weak) UIImageView *userIcon;
+@property (nonatomic, weak) UIButton *userIcon;
 @property (nonatomic, weak) UIButton *settingBtn;
 
 @property (nonatomic, strong) NSArray *leftItemArray;/**< 从Plist读取的菜单名称 */
@@ -92,6 +92,22 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
         make.width.mas_equalTo(size.width + 1);
     }];
     
+    // 选项列表
+    UITableView *tableView = [[UITableView alloc] init];
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.tableFooterView = [[UIView alloc] init];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView = tableView;
+    [allAnimationView addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(userIcon.mas_bottom).offset(padding);
+        make.left.equalTo(allAnimationView.mas_left);
+        make.right.equalTo(allAnimationView.mas_right);
+        make.height.mas_equalTo(300);
+    }];
+    
     // 设置
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [allAnimationView addSubview:settingBtn];
@@ -105,7 +121,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     self.settingBtn = settingBtn;
     [settingBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(allAnimationView.mas_left).with.offset(padding * 2);
-        make.bottom.equalTo(allAnimationView.mas_bottom).with.offset(- padding * 3);
+        make.top.equalTo(tableView.mas_bottom).with.offset(padding * 2);
     }];
     
     // 竖线
@@ -131,21 +147,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
         make.centerY.equalTo(settingBtn.mas_centerY);
     }];
     
-    // 选项列表
-    UITableView *tableView = [[UITableView alloc] init];
-    tableView.backgroundColor = [UIColor clearColor];
-    tableView.tableFooterView = [[UIView alloc] init];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView = tableView;
-    [allAnimationView addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(userIcon.mas_bottom).offset(padding);
-        make.bottom.equalTo(settingBtn.mas_top).offset(-padding);
-        make.left.equalTo(allAnimationView.mas_left);
-        make.right.equalTo(allAnimationView.mas_right);
-    }];
+    
     
     
 }
@@ -159,7 +161,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(_tableViewShowWidth);
         make.top.equalTo(self.userIcon.mas_bottom).offset(padding);
-        make.bottom.equalTo(self.settingBtn.mas_top).offset(-padding);
+        make.height.mas_equalTo(300);
         make.left.equalTo(self.allAnimationView.mas_left);
     }];
 }
