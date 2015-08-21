@@ -19,6 +19,9 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, assign) NSInteger selectIndex;
 
+@property (nonatomic, weak) UIImageView *userIcon;
+@property (nonatomic, weak) UIButton *settingBtn;
+
 @end
 
 @implementation JHLeftViewController
@@ -42,6 +45,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     [allAnimationView addSubview:userIcon];
     [userIcon setBackgroundImage:[UIImage imageNamed:@"defaultHead"] forState:UIControlStateNormal];
     [userIcon setBackgroundImage:[UIImage imageNamed:@"defaultHead"] forState:UIControlStateHighlighted];
+    self.userIcon = userIcon;
     [userIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(kDefaultHeaderW);
         make.height.mas_equalTo(kDefaultHeaderH);
@@ -87,6 +91,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     [settingBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [settingBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [settingBtn setTintColor:[UIColor whiteColor]];
+    self.settingBtn = settingBtn;
     [settingBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(allAnimationView.mas_left).with.offset(padding * 2);
         make.bottom.equalTo(allAnimationView.mas_bottom).with.offset(- padding * 3);
@@ -119,6 +124,7 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
     UITableView *tableView = [[UITableView alloc] init];
     tableView.backgroundColor = [UIColor clearColor];
     tableView.tableFooterView = [[UIView alloc] init];
+    tableView.backgroundColor = JHRandomColor;
     self.tableView = tableView;
     [allAnimationView addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -126,6 +132,16 @@ static const CGFloat kUserPhoneFontSize = 15.f;/**< 手机字体大小 */
         make.bottom.equalTo(settingBtn.mas_top).offset(-padding);
         make.left.equalTo(allAnimationView.mas_left);
         make.right.equalTo(allAnimationView.mas_right);
+    }];
+}
+
+- (void)setTableViewShowWidth:(CGFloat)tableViewShowWidth {
+    _tableViewShowWidth = tableViewShowWidth;
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(tableViewShowWidth - padding);
+        make.top.equalTo(self.userIcon.mas_bottom).offset(padding);
+        make.bottom.equalTo(self.settingBtn.mas_top).offset(-padding);
+        make.left.equalTo(self.allAnimationView.mas_left);
     }];
 }
 

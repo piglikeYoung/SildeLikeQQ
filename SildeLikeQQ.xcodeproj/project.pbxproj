@@ -21,6 +21,7 @@
 		7DE499691B86E3EE00BFAB24 /* JHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499621B86E3EE00BFAB24 /* JHNavigationController.m */; };
 		7DE4996A1B86E3EE00BFAB24 /* JHRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */; };
 		7DE4996B1B86E3EE00BFAB24 /* JHSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */; };
+		7DE4996E1B86E50B00BFAB24 /* LeftVcItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DE4996D1B86E50B00BFAB24 /* LeftVcItems.plist */; };
 		955796BB351C6ECED5ADF524 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994F8E47B48AFED205B09F67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		7DE499641B86E3EE00BFAB24 /* JHRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRightViewController.m; sourceTree = "<group>"; };
 		7DE499651B86E3EE00BFAB24 /* JHSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSideViewController.h; sourceTree = "<group>"; };
 		7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSideViewController.m; sourceTree = "<group>"; };
+		7DE4996D1B86E50B00BFAB24 /* LeftVcItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LeftVcItems.plist; sourceTree = "<group>"; };
 		994F8E47B48AFED205B09F67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB33054FBF77C5D247F4C58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FE4FCCD539DCD03D9B43D9CF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		7DE499101B86C85500BFAB24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DE4996C1B86E4BE00BFAB24 /* Plist */,
 				7DE499111B86C85500BFAB24 /* Info.plist */,
 				7DE499121B86C85500BFAB24 /* main.m */,
 				7DE4993D1B86CA0700BFAB24 /* JHPrefixHeader.pch */,
@@ -196,6 +199,7 @@
 		7DE499421B86CAD400BFAB24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7DE4996F1B86E52F00BFAB24 /* LeftVc */,
 				7DE4995C1B86E3CA00BFAB24 /* Base */,
 			);
 			path = Controllers;
@@ -225,6 +229,22 @@
 				7DE499661B86E3EE00BFAB24 /* JHSideViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7DE4996C1B86E4BE00BFAB24 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				7DE4996D1B86E50B00BFAB24 /* LeftVcItems.plist */,
+			);
+			name = Plist;
+			path = Pilst;
+			sourceTree = "<group>";
+		};
+		7DE4996F1B86E52F00BFAB24 /* LeftVc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeftVc;
 			sourceTree = "<group>";
 		};
 		AC1F13FB36301BD98E3D95F6 /* Pods */ = {
@@ -320,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DE4991C1B86C85500BFAB24 /* Main.storyboard in Resources */,
+				7DE4996E1B86E50B00BFAB24 /* LeftVcItems.plist in Resources */,
 				7DE499211B86C85500BFAB24 /* LaunchScreen.xib in Resources */,
 				7DE4991E1B86C85500BFAB24 /* Images.xcassets in Resources */,
 			);

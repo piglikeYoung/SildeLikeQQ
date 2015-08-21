@@ -106,6 +106,7 @@
     // 创建左视图
     JHLeftViewController *leftViewController = [[JHLeftViewController alloc] init];
     leftViewController.view.frame = self.view.bounds;
+    leftViewController.tableViewShowWidth = self.leftViewShowWidth;
     [self addChildViewController:leftViewController];
     self.leftViewController = leftViewController;
     

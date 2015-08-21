@@ -20,6 +20,8 @@
 
 @property (nonatomic,weak) UIView *allAnimationView;
 
+@property (nonatomic, assign) CGFloat tableViewShowWidth;/**< tableView可以展示的宽度 */
+
 - (void)selectNowindex;
 
 @end
