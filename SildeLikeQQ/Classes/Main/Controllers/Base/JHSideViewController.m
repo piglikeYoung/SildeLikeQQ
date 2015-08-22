@@ -186,6 +186,9 @@
 }
 
 #pragma mark  ShowOrHideTheView
+/**
+ *  将要展示左视图调用
+ */
 - (void)willShowLeftViewController{
     // 左视图不存在，结束
     if (!_leftViewController || _leftViewController.view.superview) {
@@ -200,11 +203,15 @@
         [_rightViewController.view removeFromSuperview];
     }
     
+    // 缩小View
     self.leftViewController.allAnimationView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     self.leftViewController.allAnimationView.x = -50;
     self.leftViewController.allAnimationView.alpha = 0.0;
 }
 
+/**
+ *  将要展示右视图调用
+ */
 - (void)willShowRightViewController{
     // 右视图不存在，结束
     if (!_rightViewController || _rightViewController.view.superview) {
@@ -213,7 +220,7 @@
     _rightViewController.view.frame = self.view.bounds;
     [self.view insertSubview:_rightViewController.view belowSubview:_currentView];
     
-    // 左视图存在则移除右视图
+    // 左视图存在则移除左视图
     if (_leftViewController && _leftViewController.view.superview) {
         [_leftViewController.view removeFromSuperview];
     }
@@ -225,6 +232,7 @@
         return;
     }
     
+    // 扩大手势的可触发范围，由于baseViewcontroller已经被拖动，手势触发范围不局限于左边100宽度
     _touchRect = CGRectMake(0, 0, JHScreenW, JHScreenH);
     
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
@@ -232,13 +240,16 @@
     _isShowLeftSide = YES;
     
     [self willShowLeftViewController];
-    NSTimeInterval animatedTime=0;
+    NSTimeInterval animatedTime = 0;
     if (animated) {
+        // 按移动距离计算动画时长
         animatedTime = ABS(_leftViewShowWidth - _currentView.frame.origin.x) / _leftViewShowWidth * _animationDuration;
     }
+    // 动画
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView animateWithDuration:animatedTime animations:^{
         [self layoutCurrentViewWithOffset:_leftViewShowWidth];
+        // 添加遮盖
         [_currentView addSubview:self.coverButton];
         // 手势从tabItem的View回到currentView
         [self.currentView addGestureRecognizer:self.panGestureRecognizer];
@@ -251,6 +262,7 @@
         return;
     }
     
+    // 扩大手势的可触发范围，由于baseViewcontroller已经被拖动，手势触发范围不局限于右边100宽度
     _rightTouchRect = CGRectMake(0, 0, JHScreenW, JHScreenH);
     
     _isShowRightSide = YES;
@@ -258,16 +270,19 @@
     [self willShowRightViewController];
     NSTimeInterval animatedTime = 0;
     if (animated) {
+        // 按移动距离计算动画时长
         animatedTime = ABS(_rightViewShowWidth + _currentView.frame.origin.x) / _rightViewShowWidth * _animationDuration;
     }
+    
+    // 动画
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView animateWithDuration:animatedTime animations:^{
         [self layoutCurrentViewWithOffset:-_rightViewShowWidth];
+        // 添加遮盖
         [_currentView addSubview:self.coverButton];
         // 手势从tabItem的View回到currentView
         [self.currentView addGestureRecognizer:self.panGestureRecognizer];
         [self showShadow:_showBoundsShadow];
-    } completion:^(BOOL finished) {
     }];
 }
 
@@ -275,9 +290,9 @@
     _isShowLeftSide = NO;
     _isShowRightSide = NO;
     
-    // 左边可响应拖动大小
+    // 左边可响应拖动大小恢复左边宽100
     _touchRect = CGRectMake(0, 0, 100, JHScreenH);
-    // 右边可响应拖动大小
+    // 右边可响应拖动大小，恢复右边宽100
     _rightTouchRect = CGRectMake(JHScreenW - 100, 0, 100, JHScreenH);
     
     [self showShadow:false];
@@ -295,6 +310,7 @@
         [_rightViewController.view removeFromSuperview];
     }];
 }
+
 - (void)hideSideViewController{
     [self hideSideViewController:YES];
 }
@@ -325,7 +341,9 @@
         [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
         
         UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer*)gestureRecognizer;
+        // 拖动坐标系转换
         CGPoint translation = [panGesture translationInView:self.view];
+        // 当self.view的x<600并且是x轴位移的时候才响应手势
         if ([panGesture velocityInView:self.view].x < 600 && ABS(translation.x)/ABS(translation.y)>1) {
             return YES;
         }
